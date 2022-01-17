@@ -1,24 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NotificationAndObserver" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHj-in-jYu">
+                                <rect key="frame" x="78" y="370" width="258" height="156"/>
+                                <state key="normal" title="Dark or Light Side"/>
+                                <connections>
+                                    <action selector="resultSideButonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="70G-yh-eHr"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yHj-in-jYu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="326" id="8z4-6v-7qg"/>
+                            <constraint firstItem="yHj-in-jYu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="92J-iv-vfa"/>
+                            <constraint firstItem="yHj-in-jYu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YPj-wl-Rr0"/>
+                            <constraint firstItem="yHj-in-jYu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="78" id="h6B-kt-6SS"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="resultSideButon" destination="yHj-in-jYu" id="MLo-hh-h3H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-23.188405797101453" y="63.616071428571423"/>
+        </scene>
+        <!--Selection View Controller-->
+        <scene sceneID="bDK-FL-7xr">
+            <objects>
+                <viewController storyboardIdentifier="SelectionVC" id="dIe-vl-0bU" customClass="SelectionViewController" customModule="NotificationAndObserver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e3E-qm-Dto">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNj-6u-xBH">
+                                <rect key="frame" x="66" y="232" width="278" height="208"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="208" id="LRe-Ac-uf0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="Light Side">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="lightSideSelectedButtonPressed:" destination="dIe-vl-0bU" eventType="touchUpInside" id="W0j-d5-pfJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIM-3K-gnG">
+                                <rect key="frame" x="66" y="482" width="278" height="208"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="Dark Side">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="darkSideSelectedButtonPressed:" destination="dIe-vl-0bU" eventType="touchUpInside" id="4FS-8h-BvH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PXt-Zt-0k4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yNj-6u-xBH" firstAttribute="leading" secondItem="PXt-Zt-0k4" secondAttribute="leading" constant="66" id="FV6-Hp-NDJ"/>
+                            <constraint firstItem="yNj-6u-xBH" firstAttribute="trailing" secondItem="ZIM-3K-gnG" secondAttribute="trailing" id="NRo-83-VDO"/>
+                            <constraint firstItem="yNj-6u-xBH" firstAttribute="leading" secondItem="ZIM-3K-gnG" secondAttribute="leading" id="NV9-lI-5pb"/>
+                            <constraint firstItem="yNj-6u-xBH" firstAttribute="top" secondItem="PXt-Zt-0k4" secondAttribute="top" constant="188" id="QAO-Qf-coR"/>
+                            <constraint firstItem="PXt-Zt-0k4" firstAttribute="bottom" secondItem="ZIM-3K-gnG" secondAttribute="bottom" constant="172" id="Zdp-9G-hQW"/>
+                            <constraint firstItem="ZIM-3K-gnG" firstAttribute="top" secondItem="yNj-6u-xBH" secondAttribute="bottom" constant="42" id="f9K-hx-HEb"/>
+                            <constraint firstItem="PXt-Zt-0k4" firstAttribute="trailing" secondItem="yNj-6u-xBH" secondAttribute="trailing" constant="70" id="vLh-nW-YBq"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uXi-8K-CzD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="628.98550724637687" y="63.616071428571423"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
